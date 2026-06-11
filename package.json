@@ -1,0 +1,18 @@
+{
+  "name": "quanlysv",
+  "private": true,
+  "scripts": {
+    "be": "pnpm --filter backend dev",
+    "fe": "pnpm --filter frontend dev",
+    "dev": "concurrently \"pnpm run be\" \"pnpm run fe\"",
+    "build": "pnpm --filter backend build && pnpm --filter frontend build",
+    "build:be": "pnpm --filter backend build",
+    "build:fe": "pnpm --filter frontend build",
+    "install:all": "pnpm install",
+    "clean": "bash scripts/clean.sh"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "docx": "^9.6.1"
+  }
+}

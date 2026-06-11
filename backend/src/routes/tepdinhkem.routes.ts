@@ -1,0 +1,12 @@
+import { Router } from "express";
+import { layTepTheoHoSoHandler, xoaTepHandler, uploadTepHandler, downloadTepHandler } from "../controllers/tepdinhkem.controller.js";
+import { fileUpload } from "../middleware/upload.middleware.js";
+
+const router = Router();
+
+router.post("/upload", fileUpload.single("file"), uploadTepHandler);
+router.get("/ho-so/:maHoSo", layTepTheoHoSoHandler);
+router.get("/download/:maTep", downloadTepHandler);
+router.delete("/:maTep", xoaTepHandler);
+
+export default router;
